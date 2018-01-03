@@ -52,7 +52,7 @@ void TabulkaSkore::ulozSkore(const string &cestaKSouboru, unsigned int limit) {
         throw "Otevření souboru nevyšlo";
     }
 
-    for (int j = 0; j < limit; ++j) {
+    for (int j = 0; j < limit && j < poleHracu.size(); ++j) {
         soubor << this->poleHracu[j].jmeno << endl << this->poleHracu[j].skore << endl;
     }
 }
