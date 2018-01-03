@@ -3,7 +3,7 @@
 #include "hra.h"
 #include "TabulkaSkore.h"
 #include "console.h"
-#include "cas.h"
+#include "Cas.h"
 
 #define SOUBOR_SE_SKORE "tabulka_skore.txt"
 

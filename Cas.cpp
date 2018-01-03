@@ -1,4 +1,4 @@
-#include "cas.h"
+#include "Cas.h"
 
 void Cas::pockej(unsigned int msekund) {
     high_resolution_clock::time_point zacatek = high_resolution_clock::now();
