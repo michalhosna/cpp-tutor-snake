@@ -1,7 +1,3 @@
-//
-// Created by Michal Hosna on 28/12/2017.
-//
-
 #include "console.h"
 #include <cstdlib>
 

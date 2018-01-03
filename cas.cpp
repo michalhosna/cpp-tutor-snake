@@ -1,7 +1,3 @@
-//
-// Created by Michal Hosna on 03/01/2018.
-//
-
 #include "cas.h"
 
 void Cas::pockej(unsigned int msekund) {
