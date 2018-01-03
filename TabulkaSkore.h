@@ -26,6 +26,7 @@ class TabulkaSkore {
         bool operator>=(const Hrac &rhs) const;
     };
 
+    // Vector je "Roztahovací pole"
     vector<Hrac> poleHracu;
 public:
     void nactiSkore(const string &cestaKSouboru);

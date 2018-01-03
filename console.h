@@ -9,6 +9,4 @@ bool jeCoCistNaVstupu();
 
 char prectiVstup();
 
-void init();
-
 #endif //BARTIKOVA_SNAKE_CONSOLE_H

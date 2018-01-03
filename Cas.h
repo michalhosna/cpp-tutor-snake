@@ -1,7 +1,3 @@
-//
-// Created by Michal Hosna on 03/01/2018.
-//
-
 #ifndef BARTIKOVA_SNAKE_CAS_H
 #define BARTIKOVA_SNAKE_CAS_H
 

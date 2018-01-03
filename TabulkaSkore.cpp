@@ -1,7 +1,3 @@
-//
-// Created by Michal Hosna on 03/01/2018.
-//
-
 #include "TabulkaSkore.h"
 #include "console.h"
 #include <iostream>
@@ -41,6 +37,7 @@ void TabulkaSkore::nactiSkore(const string &cestaKSouboru) {
         if (jmeno.length() <= 0) break;
         soubor >> skore;
 
+        // Peek nahlídne na další pozici souboru, ale neodeberejíz bufferu.
         if (soubor.peek() == '\n') soubor.get();
 
         this->poleHracu.emplace_back(jmeno, skore);
@@ -57,15 +54,13 @@ void TabulkaSkore::ulozSkore(const string &cestaKSouboru, unsigned int limit) {
 
     for (int j = 0; j < limit; ++j) {
         soubor << this->poleHracu[j].jmeno << endl << this->poleHracu[j].skore << endl;
-
-    }
-
-    for (auto i : this->poleHracu) {
     }
 }
 
 void TabulkaSkore::pridejSkore(const string &jmeno, const int &skore) {
     this->poleHracu.emplace_back(Hrac(jmeno, skore));
+
+    // Sort a reverse dohromady zajistí, že nově přiadný hráč, bude mezi hráči se stejným skoré nejvýše
     sort(this->poleHracu.begin(), this->poleHracu.end());
     reverse(this->poleHracu.begin(), this->poleHracu.end());
 }
@@ -76,7 +71,7 @@ void TabulkaSkore::vytiskniSkore() {
 
     for (auto i : this->poleHracu) {
         cout.width(MAX_DELKA_JMENA + 1);
-        cout << std::left << i.jmeno;
+        cout << left << i.jmeno;
         cout.width(5);
         cout << right << i.skore << endl;
     }

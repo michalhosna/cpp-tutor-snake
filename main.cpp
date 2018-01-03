@@ -56,6 +56,5 @@ int main() {
 
     tabulkaSkore.vytiskniSkore();
 
-    // TODO NTH: Hlava má směr
     return 0;
 }

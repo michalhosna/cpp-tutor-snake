@@ -26,9 +26,6 @@ char prectiVstup(){
     return p;
 }
 
-void init(){
-}
-
 
 #else
 
@@ -87,10 +84,5 @@ bool jeCoCistNaVstupu() {
 char prectiVstup() {
     return getchar();
 }
-
-void init() {
-
-}
-
 
 #endif
