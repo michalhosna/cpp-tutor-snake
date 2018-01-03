@@ -9,6 +9,7 @@ using namespace std;
 
 class TabulkaSkore {
     const static unsigned int MAX_DELKA_JMENA = 20;
+
     class Hrac {
     public:
         string jmeno;

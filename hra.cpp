@@ -5,10 +5,6 @@
 #include <iostream>
 #include "console.h"
 #include <vector>
-#include <stdio.h>
-#include <fstream>
-#include <iostream>
-#include <time.h>
 #include "cas.h"
 
 

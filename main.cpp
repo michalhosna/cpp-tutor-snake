@@ -1,5 +1,4 @@
 #include <iostream>
-#include <string>
 #include "Had.h"
 #include "hra.h"
 #include "TabulkaSkore.h"

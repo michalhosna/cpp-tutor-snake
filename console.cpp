@@ -35,13 +35,7 @@ void init(){
 #include <unistd.h>
 #include <term.h>
 #include <ncurses.h>
-#include <termios.h>
 #include <iostream>
-#include <fstream>
-#include <fcntl.h>
-#include <stdio.h>
-#include <termios.h>
-#include <unistd.h>
 #include <fcntl.h>
 
 using namespace std;
