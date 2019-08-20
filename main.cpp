@@ -1,15 +1,23 @@
 #include <iostream>
 #include "Had.h"
-#include "HraciPole.h"
-#include "Hra.h"
+#include "hra.h"
+#include "TabulkaSkore.h"
+#include "console.h"
+#include "Cas.h"
+
+#define SOUBOR_SE_SKORE "tabulka_skore.txt"
 
 using namespace std;
 
 int main() {
     Had hlavniHad(Souradnice(10, 10));
     HraciPole hlavniHraciPole(20, 20);
+    Cas hlavniCasovac;
 
     while (true) {
+        if (!hlavniCasovac.uzUplynuloMilisekund(300)) continue;
+
+        hlavniCasovac.vyresetujPocitadlo();
 
         if (!hlavniHraciPole.existujeJidlo()) {
             do {
@@ -21,23 +29,32 @@ int main() {
         int vstup;
         vstup = nactiVstup();
 
-        // TODO Stejný směr
 
         if (!hlavniHad.pohniSe(vstup, hlavniHraciPole)) {
-            //TODO Když nabourá sám do sebe
+            gameOver(hlavniHraciPole);
             break;
         }
 
         if (narazilDoSteny(hlavniHad, hlavniHraciPole)) {
-            //TODO Když narazí do stěny
+            gameOver(hlavniHraciPole);
             break;
         }
 
     }
 
-    // TODO ukládání skóre do souboru.
+    vymazObrazovku();
 
+    cout << "Zadej jmeno: \n";
+    string jmeno;
+    getline(cin, jmeno);
 
-    // TODO NTH: Plynulý pohyb
+    TabulkaSkore tabulkaSkore;
+
+    tabulkaSkore.nactiSkore(SOUBOR_SE_SKORE);
+    tabulkaSkore.pridejSkore(jmeno, hlavniHad.delka);
+    tabulkaSkore.ulozSkore(SOUBOR_SE_SKORE);
+
+    tabulkaSkore.vytiskniSkore();
+
     return 0;
 }
